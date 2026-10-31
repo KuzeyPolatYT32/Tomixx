@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim | TOMIX — Premium Ev ve Yaşam</title>
+  <meta name="description" content="TOMIX müşteri deneyimi ekibine ulaşın, soru, öneri ve taleplerinizi iletin.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="contact">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="tomix-header">
+    <div class="container header-container">
+      <a href="index.html" class="header-logo-link" aria-label="TOMIX Ana Sayfa">
+        <img src="assets/logo/tomix-logo.svg" alt="TOMIX Logo" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="Ana Menü">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="products.html" class="nav-link">Ürünler</a>
+        <a href="products.html?category=all" class="nav-link">Kategoriler</a>
+        <a href="about.html" class="nav-link">Hakkımızda</a>
+        <a href="contact.html" class="nav-link active">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="header-icon-btn" data-open-search aria-label="Ürün Ara" title="Ürün Ara (/)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <a href="favorites.html" class="header-icon-btn" aria-label="Favorilerim" title="Favorilerim">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="action-badge fav-counter-badge" style="display:none;">0</span>
+        </a>
+
+        <a href="cart.html" class="header-icon-btn" aria-label="Alışveriş Sepeti" title="Alışveriş Sepeti">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="action-badge cart-counter-badge" style="display:none;">0</span>
+        </a>
+
+        <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menüyü Aç/Kapat">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobil Menü">
+    <div class="mobile-drawer-header">
+      <img src="assets/logo/tomix-logo.svg" alt="TOMIX" style="height: 32px;">
+      <button type="button" class="mobile-drawer-close" id="mobile-nav-close" aria-label="Kapat">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
+      <a href="products.html" class="mobile-nav-link">Tüm Ürünler</a>
+      <a href="products.html?category=mutfak" class="mobile-nav-link">Mutfak Ürünleri</a>
+      <a href="products.html?category=saklama-duzenleme" class="mobile-nav-link">Saklama ve Düzenleme</a>
+      <a href="products.html?category=banyo" class="mobile-nav-link">Banyo Ürünleri</a>
+      <a href="products.html?category=temizlik" class="mobile-nav-link">Temizlik Ürünleri</a>
+      <a href="products.html?category=ev-yasam" class="mobile-nav-link">Ev ve Yaşam</a>
+      <a href="products.html?category=bahce" class="mobile-nav-link">Bahçe Ürünleri</a>
+      <a href="about.html" class="mobile-nav-link">Hakkımızda</a>
+      <a href="contact.html" class="mobile-nav-link active">İletişim</a>
+    </div>
+  </aside>
+
+  <!-- Page Banner -->
+  <section class="page-header-banner">
+    <div class="container">
+      <nav class="page-breadcrumb" aria-label="Sayfa Yolu">
+        <a href="index.html">Ana Sayfa</a>
+        <span class="breadcrumb-separator">/</span>
+        <span>İletişim</span>
+      </nav>
+      <h1 class="page-header-title">Bizimle İletişime Geçin</h1>
+      <p class="page-header-desc">
+        Ürünlerimiz, toptan talepleriniz veya önerileriniz hakkında bize dilediğiniz zaman ulaşabilirsiniz.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Contact Layout -->
+  <main class="container">
+    <div class="contact-layout">
+      <!-- Left Side: Contact Information Cards -->
+      <div class="contact-info-col">
+        <span class="section-label">İLETİŞİM KANALLARI</span>
+        <h2 class="section-title" style="text-align:left; font-size: 2rem;">Size Yardımcı Olmaktan Mutluluk Duyarız</h2>
+        <p style="color:var(--color-text-muted); font-size:1.05rem; line-height: 1.6;">
+          TOMIX ürün deneyimini en üst seviyede tutmak için ekibimiz haftanın 6 günü sorularınızı yanıtlamaya hazırdır.
+        </p>
+
+        <div class="contact-info-cards">
+          <!-- Card 1 -->
+          <div class="contact-card-item">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h4>E-Posta İletişimi (Demo)</h4>
+              <p>destek@tomix-demo.com</p>
+              <span style="font-size:0.8rem; color:var(--color-brand-blue);">Ortalama yanıt süresi: 2 saat</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="contact-card-item">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4>Müşteri Danışma Hattı (Demo)</h4>
+              <p>+90 (212) 555 01 99 (Demo)</p>
+              <span style="font-size:0.8rem; color:var(--color-text-muted);">Pazartesi - Cumartesi: 09:00 - 18:00</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="contact-card-item">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <h4>Genel Merkez & Showroom (Demo)</h4>
+              <p>TOMIX Tasarım Stüdyosu, Levent / İstanbul (Demo)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Contact Form -->
+      <div class="contact-form-card">
+        <h3 class="contact-form-title">Bize Mesaj Gönderin</h3>
+        <p class="contact-form-desc">Formu doldurarak merak ettiğiniz tüm soruları bize iletebilirsiniz.</p>
+
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Adınız ve Soyadınız *</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Örn: Ahmet Yılmaz" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">E-Posta Adresiniz *</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="ahmet@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-subject">Konu *</label>
+            <select id="contact-subject" class="form-select" required>
+              <option value="">Konu Seçiniz</option>
+              <option value="ürün">Ürünler ve Stok Bilgisi</option>
+              <option value="toptan">Toptan Satış ve Bayilik</option>
+              <option value="öneri">Tasarım Önerisi ve Geri Bildirim</option>
+              <option value="diğer">Diğer Konular</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Mesajınız *</label>
+            <textarea id="contact-message" class="form-textarea" placeholder="Mesajınızı buraya yazınız..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            <span>Mesajı Gönder</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+
+          <div class="form-demo-note">
+            <strong>Bilgilendirme:</strong> Bu web sitesi bir demo vitrin projesidir. İletilen formlar demo simülasyonu olup sunucuya gerçek veri aktarımı yapılmamaktadır.
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion Section -->
+    <section class="section-padding" style="padding-top: 0;">
+      <div class="section-header">
+        <span class="section-label">MERAK EDİLENLER</span>
+        <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto; display:flex; flex-direction:column; gap:16px;">
+        <details style="background:var(--color-soft-bg); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);" open>
+          <summary style="font-family:var(--font-family-heading); font-weight:700; color:var(--color-primary); cursor:pointer; font-size:1.05rem;">
+            TOMIX ürünlerinde kullanılan malzemeler gıdaya uygun mudur?
+          </summary>
+          <p style="margin-top:12px; color:var(--color-text-muted); font-size:0.95rem; line-height:1.6;">
+            Evet. Mutfak ve saklama kategorisindeki tüm kaplarımız %100 BPA Free birinci sınıf polimerlerden üretilmektedir. Asitli, yağlı veya sulu gıdalarla temasta koku veya leke yapmaz.
+          </p>
+        </details>
+
+        <details style="background:var(--color-soft-bg); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+          <summary style="font-family:var(--font-family-heading); font-weight:700; color:var(--color-primary); cursor:pointer; font-size:1.05rem;">
+            Ürünler bulaşık makinesinde yıkanabilir mi?
+          </summary>
+          <p style="margin-top:12px; color:var(--color-text-muted); font-size:0.95rem; line-height:1.6;">
+            Gövde parçalarının tamamı 85°C'ye kadar bulaşık makinesinin üst rafında güvenle yıkanabilir. Vakumlu silikon contalı kapakların uzun ömürlü sızdırmazlığı için elde ılık suyla yıkanması tavsiye edilir.
+          </p>
+        </details>
+
+        <details style="background:var(--color-soft-bg); border-radius:var(--radius-md); padding:20px; border:1px solid var(--color-border);">
+          <summary style="font-family:var(--font-family-heading); font-weight:700; color:var(--color-primary); cursor:pointer; font-size:1.05rem;">
+            Modüler kutular birbiri üzerine kilitlenir mi?
+          </summary>
+          <p style="margin-top:12px; color:var(--color-text-muted); font-size:0.95rem; line-height:1.6;">
+            Evet, TOMIX Modüler Akrilik ve Kiler serilerimiz özel taban-kapak girintileri sayesinde üst üste dizildiğinde kayma veya devrilme yapmadan tam kenetlenir.
+          </p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="tomix-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="assets/logo/tomix-logo-white.svg" alt="TOMIX Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            TOMIX, modern yaşam alanlarına fonksiyonellik, estetik ve dayanıklılık kazandıran yüksek kaliteli plastik ev ve saklama çözümleri markasıdır.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Hızlı Bağlantılar</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Ana Sayfa</a></li>
+            <li><a href="products.html" class="footer-link">Tüm Ürünler</a></li>
+            <li><a href="favorites.html" class="footer-link">Favorilerim</a></li>
+            <li><a href="cart.html" class="footer-link">Alışveriş Sepeti</a></li>
+            <li><a href="about.html" class="footer-link">Hakkımızda</a></li>
+            <li><a href="contact.html" class="footer-link">İletişim</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Kategoriler</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html?category=mutfak" class="footer-link">Mutfak Ürünleri</a></li>
+            <li><a href="products.html?category=saklama-duzenleme" class="footer-link">Saklama ve Düzenleme</a></li>
+            <li><a href="products.html?category=banyo" class="footer-link">Banyo Ürünleri</a></li>
+            <li><a href="products.html?category=temizlik" class="footer-link">Temizlik Ürünleri</a></li>
+            <li><a href="products.html?category=ev-yasam" class="footer-link">Ev ve Yaşam</a></li>
+            <li><a href="products.html?category=bahce" class="footer-link">Bahçe Ürünleri</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">E-Bülten</h4>
+          <p class="footer-newsletter-text">Yeni koleksiyonlardan ilk siz haberdar olun.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="E-posta adresiniz..." required class="newsletter-input">
+            <button type="submit" class="newsletter-submit-btn">Katıl</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TOMIX Ev ve Yaşam Çözümleri. Tüm hakları saklıdır.</p>
+        <p class="footer-demo-disclaimer">Bu site bir demo vitrin projesidir. Gerçek ödeme veya ticari işlem yapılmamaktadır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

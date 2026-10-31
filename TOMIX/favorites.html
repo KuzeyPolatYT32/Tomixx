@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorilerim | TOMIX — Premium Ev ve Yaşam</title>
+  <meta name="description" content="TOMIX favori listeniz. Beğendiğiniz ürünleri bir arada görün ve dilediğiniz zaman sepetinize ekleyin.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="favorites">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="tomix-header">
+    <div class="container header-container">
+      <a href="index.html" class="header-logo-link" aria-label="TOMIX Ana Sayfa">
+        <img src="assets/logo/tomix-logo.svg" alt="TOMIX Logo" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="Ana Menü">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="products.html" class="nav-link">Ürünler</a>
+        <a href="products.html?category=all" class="nav-link">Kategoriler</a>
+        <a href="about.html" class="nav-link">Hakkımızda</a>
+        <a href="contact.html" class="nav-link">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="header-icon-btn" data-open-search aria-label="Ürün Ara" title="Ürün Ara (/)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <a href="favorites.html" class="header-icon-btn" aria-label="Favorilerim" title="Favorilerim">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="action-badge fav-counter-badge" style="display:none;">0</span>
+        </a>
+
+        <a href="cart.html" class="header-icon-btn" aria-label="Alışveriş Sepeti" title="Alışveriş Sepeti">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="action-badge cart-counter-badge" style="display:none;">0</span>
+        </a>
+
+        <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menüyü Aç/Kapat">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobil Menü">
+    <div class="mobile-drawer-header">
+      <img src="assets/logo/tomix-logo.svg" alt="TOMIX" style="height: 32px;">
+      <button type="button" class="mobile-drawer-close" id="mobile-nav-close" aria-label="Kapat">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
+      <a href="products.html" class="mobile-nav-link">Tüm Ürünler</a>
+      <a href="products.html?category=mutfak" class="mobile-nav-link">Mutfak Ürünleri</a>
+      <a href="products.html?category=saklama-duzenleme" class="mobile-nav-link">Saklama ve Düzenleme</a>
+      <a href="products.html?category=banyo" class="mobile-nav-link">Banyo Ürünleri</a>
+      <a href="products.html?category=temizlik" class="mobile-nav-link">Temizlik Ürünleri</a>
+      <a href="products.html?category=ev-yasam" class="mobile-nav-link">Ev ve Yaşam</a>
+      <a href="products.html?category=bahce" class="mobile-nav-link">Bahçe Ürünleri</a>
+      <a href="about.html" class="mobile-nav-link">Hakkımızda</a>
+      <a href="contact.html" class="mobile-nav-link">İletişim</a>
+    </div>
+  </aside>
+
+  <!-- Page Banner -->
+  <section class="page-header-banner">
+    <div class="container">
+      <nav class="page-breadcrumb" aria-label="Sayfa Yolu">
+        <a href="index.html">Ana Sayfa</a>
+        <span class="breadcrumb-separator">/</span>
+        <span>Favorilerim</span>
+      </nav>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <h1 class="page-header-title">Favori Ürünleriniz</h1>
+        <span id="favorites-count-label" style="font-size: 1.1rem; font-weight: 700; color: var(--color-brand-blue);">0 Ürün</span>
+      </div>
+      <p class="page-header-desc">
+        Beğendiğiniz ve daha sonra incelemek istediğiniz TOMIX tasarımlarını bu sayfadan takip edebilirsiniz.
+      </p>
+    </div>
+  </section>
+
+  <!-- Favorites Content -->
+  <main class="container section-padding">
+    <!-- Active Favorites Grid -->
+    <div class="products-grid-4" id="favorites-products-grid">
+      <!-- Injected dynamically by main.js -->
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-box-container" id="favorites-empty-state" style="display:none;">
+      <div class="empty-box-icon" style="background-color: #FFF1F2; color: #E11D48;">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+      </div>
+      <h2 class="empty-box-title">Favori Listeniz Boş</h2>
+      <p class="empty-box-desc">
+        Beğendiğiniz ürünlerin üzerindeki kalp simgesine tıklayarak favorilerinize ekleyebilir ve daha sonra kolayca bulabilirsiniz.
+      </p>
+      <a href="products.html" class="btn btn-primary btn-lg">Ürünleri Keşfet</a>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="tomix-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="assets/logo/tomix-logo-white.svg" alt="TOMIX Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            TOMIX, modern yaşam alanlarına fonksiyonellik, estetik ve dayanıklılık kazandıran yüksek kaliteli plastik ev ve saklama çözümleri markasıdır.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Hızlı Bağlantılar</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Ana Sayfa</a></li>
+            <li><a href="products.html" class="footer-link">Tüm Ürünler</a></li>
+            <li><a href="favorites.html" class="footer-link">Favorilerim</a></li>
+            <li><a href="cart.html" class="footer-link">Alışveriş Sepeti</a></li>
+            <li><a href="about.html" class="footer-link">Hakkımızda</a></li>
+            <li><a href="contact.html" class="footer-link">İletişim</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Kategoriler</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html?category=mutfak" class="footer-link">Mutfak Ürünleri</a></li>
+            <li><a href="products.html?category=saklama-duzenleme" class="footer-link">Saklama ve Düzenleme</a></li>
+            <li><a href="products.html?category=banyo" class="footer-link">Banyo Ürünleri</a></li>
+            <li><a href="products.html?category=temizlik" class="footer-link">Temizlik Ürünleri</a></li>
+            <li><a href="products.html?category=ev-yasam" class="footer-link">Ev ve Yaşam</a></li>
+            <li><a href="products.html?category=bahce" class="footer-link">Bahçe Ürünleri</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">E-Bülten</h4>
+          <p class="footer-newsletter-text">Yeni koleksiyonlardan ilk siz haberdar olun.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="E-posta adresiniz..." required class="newsletter-input">
+            <button type="submit" class="newsletter-submit-btn">Katıl</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TOMIX Ev ve Yaşam Çözümleri. Tüm hakları saklıdır.</p>
+        <p class="footer-demo-disclaimer">Bu site bir demo vitrin projesidir. Gerçek ödeme veya ticari işlem yapılmamaktadır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

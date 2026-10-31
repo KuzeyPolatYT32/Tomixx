@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 56" width="240" height="56" fill="none">
+  <!-- TOMIX Geometric Symbol (White / Light Accent Version) -->
+  <g transform="translate(6, 6)">
+    <!-- Top Left Facet / Lid Block -->
+    <path d="M22 2 L40 12 L22 22 L4 12 Z" fill="#5FA8EC"/>
+    <!-- Left Isometric Body -->
+    <path d="M4 14 L20 23 L20 42 L4 32 Z" fill="#FFFFFF"/>
+    <!-- Right Isometric Body -->
+    <path d="M24 23 L40 14 L40 32 L24 42 Z" fill="#B3D7F8"/>
+    <!-- Center Dynamic Accent -->
+    <path d="M20 23 L24 23 L24 42 L20 42 Z" fill="#2878C7"/>
+    <!-- Inner Accent Dot -->
+    <circle cx="22" cy="12" r="2.5" fill="#142B45"/>
+  </g>
+  
+  <!-- TOMIX Wordmark & Tagline -->
+  <text x="62" y="32" font-family="'Manrope', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="25" font-weight="800" letter-spacing="4" fill="#FFFFFF">TOMIX</text>
+  <text x="63" y="44" font-family="'Manrope', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="7.5" font-weight="600" letter-spacing="2.5" fill="#8FA2B6">EV VE YAŞAM ÇÖZÜMLERİ</text>
+</svg>

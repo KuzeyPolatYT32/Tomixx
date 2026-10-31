@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOMIX | Yaşam Alanlarında Yeni Bir Düzen — Premium Ev & Yaşam</title>
+  <meta name="description" content="TOMIX: Fonksiyonel tasarımlar, kaliteli plastik ev ve saklama çözümleri, mutfak aksesuarları ve modern düzenleyiciler.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="home">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="tomix-header">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="header-logo-link" aria-label="TOMIX Ana Sayfa">
+        <img src="assets/logo/tomix-logo.svg" alt="TOMIX Logo" class="header-logo-img">
+      </a>
+
+      <!-- Center Desktop Navigation -->
+      <nav class="header-nav" aria-label="Ana Menü">
+        <a href="index.html" class="nav-link active">Ana Sayfa</a>
+        <a href="products.html" class="nav-link">Ürünler</a>
+        <a href="products.html?category=all" class="nav-link">Kategoriler</a>
+        <a href="about.html" class="nav-link">Hakkımızda</a>
+        <a href="contact.html" class="nav-link">İletişim</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="header-icon-btn" data-open-search aria-label="Ürün Ara" title="Ürün Ara (Kısayol: /)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Favorites Counter Link -->
+        <a href="favorites.html" class="header-icon-btn" aria-label="Favorilerim" title="Favorilerim">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="action-badge fav-counter-badge" style="display:none;">0</span>
+        </a>
+
+        <!-- Shopping Cart Counter Link -->
+        <a href="cart.html" class="header-icon-btn" aria-label="Alışveriş Sepeti" title="Alışveriş Sepeti">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="action-badge cart-counter-badge" style="display:none;">0</span>
+        </a>
+
+        <!-- Mobile Navigation Toggle -->
+        <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menüyü Aç/Kapat">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop & Menu -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobil Menü">
+    <div class="mobile-drawer-header">
+      <img src="assets/logo/tomix-logo.svg" alt="TOMIX" style="height: 32px;">
+      <button type="button" class="mobile-drawer-close" id="mobile-nav-close" aria-label="Kapat">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link active">Ana Sayfa</a>
+      <a href="products.html" class="mobile-nav-link">Tüm Ürünler</a>
+      <a href="products.html?category=mutfak" class="mobile-nav-link">Mutfak Ürünleri</a>
+      <a href="products.html?category=saklama-duzenleme" class="mobile-nav-link">Saklama ve Düzenleme</a>
+      <a href="products.html?category=banyo" class="mobile-nav-link">Banyo Ürünleri</a>
+      <a href="products.html?category=temizlik" class="mobile-nav-link">Temizlik Ürünleri</a>
+      <a href="products.html?category=ev-yasam" class="mobile-nav-link">Ev ve Yaşam</a>
+      <a href="products.html?category=bahce" class="mobile-nav-link">Bahçe Ürünleri</a>
+      <a href="about.html" class="mobile-nav-link">Hakkımızda</a>
+      <a href="contact.html" class="mobile-nav-link">İletişim</a>
+    </div>
+    <div class="mobile-drawer-footer">
+      <p class="mobile-contact-pill">
+        <strong>TOMIX Müşteri Deneyimi</strong><br>
+        destek@tomix-demo.com<br>
+        Pzt - Cmt: 09:00 - 18:00
+      </p>
+    </div>
+  </aside>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left Side: Editorial Typography -->
+        <div class="hero-content">
+          <div class="hero-label-badge hero-entrance-badge">
+            <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background-color:var(--color-brand-blue);"></span>
+            TOMIX | EV VE YAŞAM
+          </div>
+          <h1 class="hero-title hero-entrance-title">
+            Yaşam Alanlarında<br>Yeni Bir Düzen.
+          </h1>
+          <p class="hero-description hero-entrance-text">
+            Fonksiyonel tasarımlar, kaliteli ürünler ve günlük yaşamı kolaylaştıran çözümler. TOMIX ile tanışın.
+          </p>
+          <div class="hero-actions hero-entrance-actions">
+            <a href="products.html" class="btn btn-primary btn-lg">
+              <span>Koleksiyonu Keşfet</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="about.html" class="btn btn-secondary btn-lg">Markamızı Tanıyın</a>
+          </div>
+
+          <!-- Trust Micro-Points -->
+          <div class="hero-trust-points hero-entrance-actions">
+            <div class="hero-trust-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span>%100 BPA Free Güvencesi</span>
+            </div>
+            <div class="hero-trust-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>Ödüllü Minimalist Tasarım</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Art-Directed Composition -->
+        <div class="hero-visual hero-entrance-visual">
+          <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=1200&q=85" alt="TOMIX Premium Ev ve Saklama Ürünleri" class="hero-image">
+          </div>
+
+          <!-- Floating Accent Glass Card -->
+          <div class="hero-floating-card">
+            <div class="floating-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="floating-card-title">Modüler Akrilik Seri</div>
+              <div class="floating-card-desc">Hava Geçirmez & İstiflenebilir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. TRUST & BRAND BENEFITS ==================== -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="benefits-grid">
+        <!-- Benefit 1 -->
+        <div class="benefit-card reveal-up">
+          <div class="benefit-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="benefit-content">
+            <h4>Kaliteli Ürünler</h4>
+            <p>Gıdayla temasa uygun, BPA içermeyen yüksek dayanımlı birinci sınıf polimerler.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="benefit-card reveal-up delay-100">
+          <div class="benefit-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </div>
+          <div class="benefit-content">
+            <h4>Fonksiyonel Tasarım</h4>
+            <p>Dolap ve çekmecelerde milimetrik düzen sağlayan modüler ve istiflenebilir yapılar.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="benefit-card reveal-up delay-200">
+          <div class="benefit-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <div class="benefit-content">
+            <h4>Geniş Ürün Yelpazesi</h4>
+            <p>Mutfaktan banyoya, kilerden bahçeye evin her ihtiyacına yönelik eksiksiz koleksiyon.</p>
+          </div>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="benefit-card reveal-up delay-300">
+          <div class="benefit-icon-wrapper">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <div class="benefit-content">
+            <h4>Güvenilir Hizmet</h4>
+            <p>Koşulsuz müşteri memnuniyeti, titiz paketleme ve hızlı çözüm yaklaşımı.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 7. CATEGORY SHOWCASE ==================== -->
+  <section class="categories-section section-padding">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">KEŞFEDİN</span>
+        <h2 class="section-title">İhtiyacınıza Uygun Kategoriler</h2>
+        <p class="section-subtitle">Evdeki her odanın dinamizmine ve saklama ihtiyacına özel olarak tasarlanmış özgün TOMIX serilerini keşfedin.</p>
+      </div>
+
+      <!-- Asymmetric Editorial Grid -->
+      <div class="category-asymmetric-grid" id="category-showcase-grid">
+        <!-- Rendered dynamically by main.js or fallback -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. FEATURED PRODUCTS ==================== -->
+  <section class="products-section section-padding">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">ÖNE ÇIKANLAR</span>
+        <h2 class="section-title">Öne Çıkan Ürünler</h2>
+        <p class="section-subtitle">Günlük yaşamınızı kolaylaştıran favoriler.</p>
+      </div>
+
+      <!-- 8+ Featured Product Cards Grid -->
+      <div class="products-grid-4 reveal-up" id="featured-products-grid">
+        <!-- Injected dynamically by main.js -->
+      </div>
+
+      <div style="text-align:center; margin-top: 48px;" class="reveal-up">
+        <a href="products.html" class="btn btn-outline btn-lg">
+          <span>Tüm Koleksiyonu Görüntüle</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. BRAND STORY ==================== -->
+  <section class="story-section section-padding">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image-box reveal-left">
+          <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=1200&q=80" alt="TOMIX Yaşam Alanı Düzeni">
+        </div>
+
+        <div class="story-content reveal-right">
+          <span class="section-label">BİZİM HİKAYEMİZ</span>
+          <h2>Her Detayda Daha İyi Bir Yaşam.</h2>
+          <p>
+            TOMIX, evlerin sadece barınılan bir mekan değil; dinginlik, estetik ve kusursuz bir organizasyon alanı olması gerektiği inancıyla yola çıktı.
+          </p>
+          <p>
+            Her tasarımımızda ergonomiyi, çevreye duyarlı hammadde seçimini ve günlük yaşamın küçük zorluklarını ortadan kaldıran pratik çözümleri merkezimize alıyoruz. Mutfak kilerinizdeki en küçük baharatlıktan banyonuzdaki şık aksesuarlara kadar her TOMIX parçası, hayatınıza sessiz bir intizam katmak için üretilir.
+          </p>
+
+          <div class="story-features">
+            <div class="story-feature-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>%100 Geri Dönüştürülebilir</span>
+            </div>
+            <div class="story-feature-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Kırılmaya Karşı Güçlendirilmiş</span>
+            </div>
+            <div class="story-feature-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Hava Geçirmez Silikon Kilitleme</span>
+            </div>
+            <div class="story-feature-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Zarif İskandinav Tasarım Çizgisi</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 36px;">
+            <a href="about.html" class="btn btn-primary">Daha Fazla Bilgi Edinin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. SPECIAL CAMPAIGN ==================== -->
+  <section class="campaign-section">
+    <div class="container">
+      <div class="campaign-banner reveal-up">
+        <div class="campaign-content">
+          <span class="campaign-badge">ÖZEL SEÇKİ</span>
+          <h2 class="campaign-title">Yaşam Alanınızı Yeniden Keşfedin.</h2>
+          <p class="campaign-description">
+            Fonksiyonel ve modern ürünlerle yaşamınıza pratik dokunuşlar katın. Düzenli alanlar, sakin bir zihin yaratır.
+          </p>
+          <a href="products.html" class="btn btn-outline-white btn-lg">
+            <span>Ürünleri İncele</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="campaign-visual">
+          <div class="campaign-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="TOMIX Özel Kampanya">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 19. FOOTER ==================== -->
+  <footer class="tomix-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="index.html" aria-label="TOMIX">
+            <img src="assets/logo/tomix-logo-white.svg" alt="TOMIX Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            TOMIX, modern yaşam alanlarına fonksiyonellik, estetik ve dayanıklılık kazandıran yüksek kaliteli plastik ev ve saklama çözümleri markasıdır.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12a4 4 0 0 1 8 0c0 2.5-1.8 4-3.5 4-1 0-1.5-.5-1.5-1 0-.3.1-.7.2-1.1l.6-2.5"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Hızlı Bağlantılar</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Ana Sayfa</a></li>
+            <li><a href="products.html" class="footer-link">Tüm Ürünler</a></li>
+            <li><a href="favorites.html" class="footer-link">Favorilerim</a></li>
+            <li><a href="cart.html" class="footer-link">Alışveriş Sepeti</a></li>
+            <li><a href="about.html" class="footer-link">Hakkımızda</a></li>
+            <li><a href="contact.html" class="footer-link">İletişim</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h4 class="footer-col-title">Kategoriler</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html?category=mutfak" class="footer-link">Mutfak Ürünleri</a></li>
+            <li><a href="products.html?category=saklama-duzenleme" class="footer-link">Saklama ve Düzenleme</a></li>
+            <li><a href="products.html?category=banyo" class="footer-link">Banyo Ürünleri</a></li>
+            <li><a href="products.html?category=temizlik" class="footer-link">Temizlik Ürünleri</a></li>
+            <li><a href="products.html?category=ev-yasam" class="footer-link">Ev ve Yaşam</a></li>
+            <li><a href="products.html?category=bahce" class="footer-link">Bahçe Ürünleri</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div>
+          <h4 class="footer-col-title">E-Bülten</h4>
+          <p class="footer-newsletter-text">
+            Yeni ürün lansmanları ve sezonluk düzenleme ipuçlarından anında haberdar olun.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="E-posta adresiniz..." required class="newsletter-input" aria-label="E-posta">
+            <button type="submit" class="newsletter-submit-btn">Katıl</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TOMIX Ev ve Yaşam Çözümleri. Tüm hakları saklıdır.</p>
+        <p class="footer-demo-disclaimer">Bu site bir demo vitrin projesidir. Gerçek ödeme veya ticari işlem yapılmamaktadır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

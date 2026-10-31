@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ürün Detayı | TOMIX — Premium Ev ve Yaşam</title>
+  <meta name="description" content="TOMIX ürün detayları, teknik özellikleri, malzeme bilgisi ve kullanım avantajları.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="productDetail">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="tomix-header">
+    <div class="container header-container">
+      <a href="index.html" class="header-logo-link" aria-label="TOMIX Ana Sayfa">
+        <img src="assets/logo/tomix-logo.svg" alt="TOMIX Logo" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="Ana Menü">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="products.html" class="nav-link active">Ürünler</a>
+        <a href="products.html?category=all" class="nav-link">Kategoriler</a>
+        <a href="about.html" class="nav-link">Hakkımızda</a>
+        <a href="contact.html" class="nav-link">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="header-icon-btn" data-open-search aria-label="Ürün Ara" title="Ürün Ara (/)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <a href="favorites.html" class="header-icon-btn" aria-label="Favorilerim" title="Favorilerim">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="action-badge fav-counter-badge" style="display:none;">0</span>
+        </a>
+
+        <a href="cart.html" class="header-icon-btn" aria-label="Alışveriş Sepeti" title="Alışveriş Sepeti">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="action-badge cart-counter-badge" style="display:none;">0</span>
+        </a>
+
+        <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Menüyü Aç/Kapat">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobil Menü">
+    <div class="mobile-drawer-header">
+      <img src="assets/logo/tomix-logo.svg" alt="TOMIX" style="height: 32px;">
+      <button type="button" class="mobile-drawer-close" id="mobile-nav-close" aria-label="Kapat">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
+      <a href="products.html" class="mobile-nav-link active">Tüm Ürünler</a>
+      <a href="products.html?category=mutfak" class="mobile-nav-link">Mutfak Ürünleri</a>
+      <a href="products.html?category=saklama-duzenleme" class="mobile-nav-link">Saklama ve Düzenleme</a>
+      <a href="products.html?category=banyo" class="mobile-nav-link">Banyo Ürünleri</a>
+      <a href="products.html?category=temizlik" class="mobile-nav-link">Temizlik Ürünleri</a>
+      <a href="products.html?category=ev-yasam" class="mobile-nav-link">Ev ve Yaşam</a>
+      <a href="products.html?category=bahce" class="mobile-nav-link">Bahçe Ürünleri</a>
+      <a href="about.html" class="mobile-nav-link">Hakkımızda</a>
+      <a href="contact.html" class="mobile-nav-link">İletişim</a>
+    </div>
+  </aside>
+
+  <!-- Breadcrumbs -->
+  <div class="container" style="padding-top: 32px;">
+    <nav class="page-breadcrumb" aria-label="Sayfa Yolu">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="products.html">Ürünler</a>
+      <span class="breadcrumb-separator">/</span>
+      <a href="#" id="detail-crumb-category">Kategori</a>
+      <span class="breadcrumb-separator">/</span>
+      <span id="detail-crumb-title">Ürün Başlığı</span>
+    </nav>
+  </div>
+
+  <!-- Main Product Detail Section -->
+  <main class="container detail-section" id="product-detail-container">
+    <div class="detail-grid">
+      <!-- Left: Gallery Component -->
+      <div class="detail-gallery">
+        <div class="detail-main-img-box">
+          <img src="" alt="" id="detail-main-img" class="detail-main-img">
+          <button type="button" class="detail-zoom-btn" id="detail-zoom-trigger" aria-label="Görseli Büyüt" title="Tam Boy İncele">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Thumbnails Row -->
+        <div class="detail-thumbnails-row" id="detail-thumbnails">
+          <!-- Injected dynamically -->
+        </div>
+      </div>
+
+      <!-- Right: Product Information & Purchase Flow -->
+      <div class="detail-info">
+        <div class="detail-meta-row">
+          <a href="#" class="detail-cat-link" id="detail-product-category">Kategori</a>
+          <span class="product-badge badge-primary" id="detail-product-badge">Öne Çıkan</span>
+        </div>
+
+        <h1 class="detail-product-title" id="detail-product-title">Ürün Başlığı Yükleniyor...</h1>
+
+        <div class="detail-reviews-row">
+          <div class="rating-stars" aria-label="Değerlendirme Puanı">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#F59E0B" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <span class="rating-score" id="detail-rating-score">4.9</span>
+          <span class="rating-count" id="detail-reviews-count">(124 Değerlendirme)</span>
+        </div>
+
+        <!-- Prices -->
+        <div class="detail-price-box">
+          <span class="detail-current-price" id="detail-price-current">0.00 TL</span>
+          <span class="detail-old-price" id="detail-price-old">0.00 TL</span>
+          <span class="detail-discount-pill" id="detail-discount-tag">-20%</span>
+        </div>
+
+        <div class="detail-stock-status">
+          <span class="stock-indicator-dot"></span>
+          <span id="detail-stock-badge">Stokta Var (Demo Veri)</span>
+        </div>
+
+        <p class="detail-short-description" id="detail-short-desc">
+          Ürün kısa açıklaması yükleniyor...
+        </p>
+
+        <!-- Actions: Stepper + Add to Cart + Fav -->
+        <div class="detail-actions-bar">
+          <div class="qty-stepper-box">
+            <button type="button" class="qty-step-btn" id="detail-qty-minus" aria-label="Adet Azalt">-</button>
+            <input type="number" id="detail-qty-input" class="qty-input-field" value="1" min="1" max="20" aria-label="Ürün Adedi">
+            <button type="button" class="qty-step-btn" id="detail-qty-plus" aria-label="Adet Artır">+</button>
+          </div>
+
+          <button type="button" class="btn btn-primary detail-add-cart-btn" id="detail-add-to-cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span>Sepete Ekle</span>
+          </button>
+
+          <button type="button" class="detail-fav-btn" id="detail-fav-btn" aria-label="Favorilere Ekle/Çıkar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Material Assurance Badges -->
+        <div class="detail-assurance-grid">
+          <div class="assurance-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>%100 BPA Free</span>
+          </div>
+          <div class="assurance-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            <span>Geri Dönüştürülebilir</span>
+          </div>
+          <div class="assurance-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            <span>Bulaşık Makinesi Uyumu</span>
+          </div>
+        </div>
+
+        <!-- Long Description -->
+        <div style="margin-bottom: 32px;">
+          <h4 style="font-family: var(--font-family-heading); font-size: 1.15rem; font-weight:700; color:var(--color-primary); margin-bottom: 12px;">Ürün Açıklaması</h4>
+          <p id="detail-full-desc" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7;"></p>
+        </div>
+
+        <!-- Specifications Table -->
+        <div class="detail-specs-box">
+          <h4>Teknik Detaylar ve Boyutlar</h4>
+          <table class="specs-table" id="detail-specs-table">
+            <!-- Injected dynamically -->
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <section class="related-products-section" style="padding-top: 48px; border-top: 1px solid var(--color-border);">
+      <div class="section-header" style="text-align: left; margin-bottom: 36px;">
+        <span class="section-label">İLGİNİZİ ÇEKEBİLİR</span>
+        <h2 class="section-title" style="font-size: 1.85rem;">Benzer Ürünler</h2>
+      </div>
+      <div class="products-grid-4" id="related-products-grid">
+        <!-- Injected dynamically -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Image Zoom Fullscreen Modal -->
+  <div class="image-zoom-modal" id="image-zoom-modal" aria-hidden="true">
+    <button type="button" class="zoom-modal-close" id="zoom-modal-close" aria-label="Kapat">&times;</button>
+    <img src="" alt="Büyütülmüş Ürün Görseli" class="zoom-modal-img" id="zoom-modal-img">
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="tomix-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html">
+            <img src="assets/logo/tomix-logo-white.svg" alt="TOMIX Logo" class="footer-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            TOMIX, modern yaşam alanlarına fonksiyonellik, estetik ve dayanıklılık kazandıran yüksek kaliteli plastik ev ve saklama çözümleri markasıdır.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Hızlı Bağlantılar</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Ana Sayfa</a></li>
+            <li><a href="products.html" class="footer-link">Tüm Ürünler</a></li>
+            <li><a href="favorites.html" class="footer-link">Favorilerim</a></li>
+            <li><a href="cart.html" class="footer-link">Alışveriş Sepeti</a></li>
+            <li><a href="about.html" class="footer-link">Hakkımızda</a></li>
+            <li><a href="contact.html" class="footer-link">İletişim</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Kategoriler</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html?category=mutfak" class="footer-link">Mutfak Ürünleri</a></li>
+            <li><a href="products.html?category=saklama-duzenleme" class="footer-link">Saklama ve Düzenleme</a></li>
+            <li><a href="products.html?category=banyo" class="footer-link">Banyo Ürünleri</a></li>
+            <li><a href="products.html?category=temizlik" class="footer-link">Temizlik Ürünleri</a></li>
+            <li><a href="products.html?category=ev-yasam" class="footer-link">Ev ve Yaşam</a></li>
+            <li><a href="products.html?category=bahce" class="footer-link">Bahçe Ürünleri</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">E-Bülten</h4>
+          <p class="footer-newsletter-text">Yeni koleksiyonlardan ilk siz haberdar olun.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="E-posta adresiniz..." required class="newsletter-input">
+            <button type="submit" class="newsletter-submit-btn">Katıl</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TOMIX Ev ve Yaşam Çözümleri. Tüm hakları saklıdır.</p>
+        <p class="footer-demo-disclaimer">Bu site bir demo vitrin projesidir. Gerçek ödeme veya ticari işlem yapılmamaktadır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

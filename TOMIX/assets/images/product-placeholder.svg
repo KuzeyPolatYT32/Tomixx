@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" fill="none">
+  <rect width="800" height="800" fill="#F6F7F8"/>
+  <circle cx="400" cy="400" r="280" fill="#EAF3FA" opacity="0.6"/>
+  <g transform="translate(330, 310) scale(2.2)">
+    <!-- Top Lid Facet -->
+    <path d="M22 2 L40 12 L22 22 L4 12 Z" fill="#2878C7"/>
+    <!-- Left Body -->
+    <path d="M4 14 L20 23 L20 42 L4 32 Z" fill="#142B45"/>
+    <!-- Right Body -->
+    <path d="M24 23 L40 14 L40 32 L24 42 Z" fill="#0C1D30"/>
+    <!-- Center Accent -->
+    <path d="M20 23 L24 23 L24 42 L20 42 Z" fill="#5FA8EC"/>
+    <circle cx="22" cy="12" r="2.5" fill="#FFFFFF" opacity="0.9"/>
+  </g>
+  <text x="400" y="520" font-family="'Manrope', sans-serif" font-size="28" font-weight="800" letter-spacing="4" fill="#142B45" text-anchor="middle">TOMIX</text>
+  <text x="400" y="555" font-family="'Manrope', sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#737D87" text-anchor="middle">PREMIUM EV VE YAŞAM ÇÖZÜMLERİ</text>
+</svg>
